@@ -64,23 +64,17 @@ namespace McNeelCourse.DiffusionLimitedAggregation
 
             int iSubiterations = 0;
             bool iUseParallel = false;
-
+            bool iRun = false;
             DA.GetData("Subiterations", ref iSubiterations);
             DA.GetData("Use Parallel", ref iUseParallel);
-
-            if (iUseParallel)
-                for (int i = 0; i < iSubiterations; i++)
-                    dlaSystem.IterateUsingParallel();
-            else
-                for (int i = 0; i < iSubiterations; i++)
-                    dlaSystem.Iterate();
-
-
-            bool iRun = false;
             DA.GetData("Run", ref iRun);
 
-            if (iRun)
-                ExpireSolution(true);
+
+
+
+
+
+
 
             //================================================================
             // Output data using Grasshopper geometry data type wrapper
